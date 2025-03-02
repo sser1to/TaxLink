@@ -1,0 +1,150 @@
+﻿<Window x:Class="TaxLink.Windows.TaxpayerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaxLink.Windows"
+        mc:Ignorable="d"
+        Title="TaxLink (Налогоплательщик)" Height="1080" Width="1920" MinHeight="720" MinWidth="1280" SizeChanged="Window_SizeChanged" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Viewbox Stretch="Fill">
+        <Grid Height="1070" Width="1920">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Style="{StaticResource Rect1}" Grid.RowSpan="2" Grid.ColumnSpan="50"></Rectangle>
+            <Rectangle Style="{StaticResource Rect1}" Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="50"></Rectangle>
+            <Rectangle Style="{StaticResource Rect1}" Grid.Row="48" Grid.RowSpan="2" Grid.ColumnSpan="50"></Rectangle>
+            <Rectangle Style="{StaticResource Rect1}" Grid.Row="6" Grid.RowSpan="42" Grid.ColumnSpan="9"></Rectangle>
+            <Border Style="{StaticResource Bord1}" Grid.Row="7" Grid.RowSpan="40" Grid.Column="1" Grid.ColumnSpan="7"></Border>
+            <Frame Margin="3" Grid.Row="10" Grid.RowSpan="36" Grid.Column="1" Grid.ColumnSpan="7" Name="frame2" NavigationUIVisibility="Hidden"></Frame>
+            <Border Style="{StaticResource Bord2}" Grid.Row="7" Grid.RowSpan="40" Grid.Column="10" Grid.ColumnSpan="39">
+                <Frame Name="frame1" NavigationUIVisibility="Hidden" Margin="7"></Frame>
+            </Border>
+            <Border Style="{StaticResource Bord2}" CornerRadius="10" Grid.Row="48" Grid.RowSpan="2" Margin="5" Grid.Column="46" Grid.ColumnSpan="4">
+                <Label Style="{StaticResource Lb1}" Name="lb1"></Label>
+            </Border>
+            <Label Style="{StaticResource Lb1}" Content="Фильтры" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2" FontSize="24"></Label>
+            <Border Background="White" Style="{StaticResource Bord1}" Grid.ColumnSpan="1" Grid.RowSpan="2" CornerRadius="10" Margin="3">
+                <Image Source="pack://application:,,,/Images/logo.png" />
+            </Border>
+            <Label Style="{StaticResource Lb1}" FontSize="20" Content="TaxLink" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+            <Border Name="br1" MouseLeftButtonDown="ClarkBtn" Style="{StaticResource Bord3}" Grid.Column="44" Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="10" Margin="3">
+                <Image Source="pack://application:,,,/Images/clark.png" />
+            </Border>
+            <Border Name="br2" MouseLeftButtonDown="SettingsBtn" Style="{StaticResource Bord3}" Grid.Column="46" Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="10" Margin="3">
+                <Image Source="pack://application:,,,/Images/edit.png" Margin="2" />
+            </Border>
+            <Border MouseLeftButtonDown="ExitBtn" Style="{StaticResource Bord3}" Grid.Column="48" Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="10" Margin="3">
+                <Image Source="pack://application:,,,/Images/exit.png" />
+            </Border>
+            <Button Name="btn1" Click="MainBtn" Content="Главная" Style="{StaticResource Btn2}" Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="9" Margin="10"></Button>
+            <Button Name="btn2" Click="PaymentsBtn" Content="Платежи" Style="{StaticResource Btn1}" Grid.Column="9" Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="20" Margin="10"></Button>
+            <Button Name="btn3" Click="ArrearsBtn" Content="Задолженности" Style="{StaticResource Btn1}" Grid.Column="29" Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="21" Margin="10"></Button>
+
+            <Border MouseLeftButtonDown="InfoBtn" Style="{StaticResource Bord3}" Grid.Row="48" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="10" Margin="3">
+                <Image Source="pack://application:,,,/Images/info.png" Margin="3"/>
+            </Border>
+        </Grid>
+    </Viewbox>
+</Window>

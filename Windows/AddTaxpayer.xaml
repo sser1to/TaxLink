@@ -1,0 +1,168 @@
+﻿<Window x:Class="TaxLink.Windows.AddTaxpayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaxLink.Windows"
+        mc:Ignorable="d"
+        Title="Добавление записи (Налогоплательщики)" Height="790" Width="930" MaxHeight="790" MaxWidth="930" MinHeight="527" MinWidth="620" SizeChanged="Window_SizeChanged" WindowStartupLocation="CenterScreen">
+    <Viewbox Stretch="Fill">
+        <Grid Height="770" Width="930">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Style="{StaticResource Rect1}" Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="40"></Rectangle>
+            <Border Style="{StaticResource Bord2}" Grid.Row="5" Grid.RowSpan="52" Grid.Column="1" Grid.ColumnSpan="38"></Border>
+            <Label Style="{StaticResource Lb1}" FontSize="20" Content="Добавление записи" Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="10" Grid.Column="15"></Label>
+            <Button Click="AddBtn" Style="{StaticResource Btn1}" Content="Добавить" Grid.Row="58" FontSize="14" Grid.RowSpan="3" Grid.Column="19" Grid.ColumnSpan="6"></Button>
+            <Button Click="ClearBtn" Style="{StaticResource Btn1}" Content="Очистить" Grid.Row="58" FontSize="14" Grid.RowSpan="3" Grid.Column="26" Grid.ColumnSpan="6"></Button>
+            <Button Click="CancelBtn" Style="{StaticResource Btn1}" Content="Отмена" Grid.Row="58" FontSize="14" Grid.RowSpan="3" Grid.Column="33" Grid.ColumnSpan="6"></Button>
+
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Фамилия" Grid.Row="6" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="5"></Label>
+            <TextBox Name="tbx1" Style="{StaticResource Tbx1}" Text="{Binding LName}" Grid.Row="9" Grid.RowSpan="4" Grid.Column="2" Grid.ColumnSpan="17"></TextBox>
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Имя" Grid.Row="6" Grid.RowSpan="3" Grid.Column="27" Grid.ColumnSpan="5"></Label>
+            <TextBox Name="tbx2" Style="{StaticResource Tbx1}" Text="{Binding FName}" Grid.Row="9" Grid.RowSpan="4" Grid.Column="21" Grid.ColumnSpan="17"></TextBox>
+
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Отчество" Grid.Row="13" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="5"></Label>
+            <TextBox Name="tbx3" Style="{StaticResource Tbx1}" Text="{Binding Patronymic}" Grid.Row="16" Grid.RowSpan="4" Grid.Column="2" Grid.ColumnSpan="17"></TextBox>
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Пол" Grid.Row="13" Grid.RowSpan="3" Grid.Column="27" Grid.ColumnSpan="5"></Label>
+            <ComboBox Name="cbx1" Style="{StaticResource Cbx1}" Grid.Row="16" SelectedIndex="0" Grid.RowSpan="4" Grid.Column="21" Grid.ColumnSpan="17">
+                <ComboBoxItem Content="Мужской"></ComboBoxItem>
+                <ComboBoxItem Content="Женский"></ComboBoxItem>
+            </ComboBox>
+
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Номер телефона" Grid.Row="20" Grid.RowSpan="3" Grid.Column="7" Grid.ColumnSpan="7"></Label>
+            <TextBox Name="tbx4" Style="{StaticResource Tbx1}" Text="{Binding Phone}" Grid.Row="23" Grid.RowSpan="4" Grid.Column="2" Grid.ColumnSpan="17"></TextBox>
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="ИНН" Grid.Row="20" Grid.RowSpan="3" Grid.Column="25" Grid.ColumnSpan="9"></Label>
+            <TextBox Name="tbx5" Style="{StaticResource Tbx1}" Text="{Binding INN}" Grid.Row="23" Grid.RowSpan="4" Grid.Column="21" Grid.ColumnSpan="17"></TextBox>
+
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Место рождения" Grid.Row="27" Grid.RowSpan="3" Grid.Column="6" Grid.ColumnSpan="9"></Label>
+            <TextBox Name="tbx6" Style="{StaticResource Tbx1}" Text="{Binding BirthPlace}" Grid.Row="30" Grid.RowSpan="4" Grid.Column="2" Grid.ColumnSpan="17"></TextBox>
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Адрес проживания" Grid.Row="27" Grid.RowSpan="3" Grid.Column="25" Grid.ColumnSpan="9"></Label>
+            <TextBox Name="tbx7" Style="{StaticResource Tbx1}" Text="{Binding Address}" Grid.Row="30" Grid.RowSpan="4" Grid.Column="21" Grid.ColumnSpan="17"></TextBox>
+
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Серия паспорта" Grid.Row="34" Grid.RowSpan="3" Grid.Column="6" Grid.ColumnSpan="9"></Label>
+            <TextBox Name="tbx8" Style="{StaticResource Tbx1}" Text="{Binding PassportSeries}" Grid.Row="37" Grid.RowSpan="4" Grid.Column="2" Grid.ColumnSpan="17"></TextBox>
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Номер паспорта" Grid.Row="34" Grid.RowSpan="3" Grid.Column="25" Grid.ColumnSpan="9"></Label>
+            <TextBox Name="tbx9" Style="{StaticResource Tbx1}" Text="{Binding PassportNumber}" Grid.Row="37" Grid.RowSpan="4" Grid.Column="21" Grid.ColumnSpan="17"></TextBox>
+
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Логин" Grid.Row="41" Grid.RowSpan="3" Grid.Column="6" Grid.ColumnSpan="9"></Label>
+            <TextBox Name="tbx10" Style="{StaticResource Tbx1}" Text="{Binding Login}" Grid.Row="44" Grid.RowSpan="4" Grid.Column="2" Grid.ColumnSpan="14"></TextBox>
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Пароль" Grid.Row="41" Grid.RowSpan="3" Grid.Column="25" Grid.ColumnSpan="9"></Label>
+            <TextBox Name="tbx11" Style="{StaticResource Tbx1}" Text="{Binding Password}" Grid.Row="44" Grid.RowSpan="4" Grid.Column="21" Grid.ColumnSpan="14"></TextBox>
+            <Border Name="br1" MouseLeftButtonDown="RandomLoginBtn" Style="{StaticResource Bord3}" Grid.Column="16" Grid.ColumnSpan="3" Grid.Row="44" Grid.RowSpan="4" CornerRadius="10" Margin="10, 0, 0, 0">
+                <Image Source="pack://application:,,,/Images/random.png" />
+            </Border>
+            <Border Name="br2" MouseLeftButtonDown="RandomPasswordBtn" Style="{StaticResource Bord3}" Grid.Column="35" Grid.ColumnSpan="3" Grid.Row="44" Grid.RowSpan="4" CornerRadius="10" Margin="10, 0, 0, 0">
+                <Image Source="pack://application:,,,/Images/random.png" />
+            </Border>
+
+            <Label Style="{StaticResource Lb1}" FontSize="16" Content="Гражданство" Grid.Row="48" Grid.RowSpan="3" Grid.Column="6" Grid.ColumnSpan="9"></Label>
+            <TextBox Name="tbx12" Style="{StaticResource Tbx1}" Grid.Row="51" Grid.RowSpan="4" Grid.Column="2" Grid.ColumnSpan="17"></TextBox>
+            <Button Click="CountriesBtn" Style="{StaticResource Btn1}" FontSize="14" Content="Посмотреть список всех стран" Grid.Row="51" Grid.RowSpan="4" Grid.Column="21" Grid.ColumnSpan="17"></Button>
+        </Grid>
+    </Viewbox>
+</Window>

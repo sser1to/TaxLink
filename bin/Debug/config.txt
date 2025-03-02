@@ -1,0 +1,4 @@
+theme=1
+notifications=True
+fontSize=14
+numberOfEntriesPerPage=20

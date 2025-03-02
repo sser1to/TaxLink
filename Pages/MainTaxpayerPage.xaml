@@ -1,0 +1,113 @@
+﻿<Page x:Class="TaxLink.Pages.MainTaxpayerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaxLink.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1600"
+      Title="MainTaxpayerPage" Background="White">
+    <Viewbox Stretch="Fill">
+        <Grid Height="850" Width="1600">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="pack://application:,,,/Images/logo.png" Stretch="Fill" Grid.Row="1" Grid.RowSpan="10" Grid.Column="1" Grid.ColumnSpan="6"/>
+            <Label Style="{StaticResource Lb1}" Content="TaxLink" FontWeight="Bold" FontSize="54" Grid.Row="2" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="6" HorizontalAlignment="Left"></Label>
+            <TextBlock Style="{StaticResource Tbc1}" Text="Добро пожаловать в программу для налоговой инспекции!" FontSize="20" Grid.Row="5" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="15" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock Style="{StaticResource Tbc1}" Text="Здесь мы облегчаем Вам процесс учета и уплаты налогов, предоставляя удобные инструменты. Наша миссия - сделать взаимодействие с налоговой системой простым и эффективным." FontSize="20" Grid.Row="8" Grid.RowSpan="5" Grid.Column="8" Grid.ColumnSpan="15" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock Style="{StaticResource Tbc1}" FontSize="20" Grid.Row="13" Grid.RowSpan="6" Grid.Column="8" Grid.ColumnSpan="15" HorizontalAlignment="Left">
+            Краткий путеводитель:
+            <LineBreak/>
+            - <Hyperlink Click="ClarkBtn">Текстовый помощник Кларк</Hyperlink>
+            <LineBreak/>
+            - <Hyperlink Click="PaymentsBtn">Проведенные платежи</Hyperlink>
+            <LineBreak/>
+            - <Hyperlink Click="ArrearsBtn">Задолженности</Hyperlink>
+            <LineBreak/>
+            - <Hyperlink Click="SettingsBtn">Настройки</Hyperlink>
+            </TextBlock>
+        </Grid>
+    </Viewbox>
+</Page>

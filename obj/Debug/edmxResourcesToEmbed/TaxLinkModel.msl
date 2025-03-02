@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TaxInspectionModelContainer" CdmEntityContainer="TaxInspectionEntities1">
+    <EntitySetMapping Name="Action">
+      <EntityTypeMapping TypeName="TaxInspectionModel.Action">
+        <MappingFragment StoreEntitySet="Action">
+          <ScalarProperty Name="IdAction" ColumnName="IdAction" />
+          <ScalarProperty Name="ActionDate" ColumnName="ActionDate" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="IdActionType" ColumnName="IdActionType" />
+          <ScalarProperty Name="IdWorkingTable" ColumnName="IdWorkingTable" />
+          <ScalarProperty Name="IdAffectedElement" ColumnName="IdAffectedElement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActionType">
+      <EntityTypeMapping TypeName="TaxInspectionModel.ActionType">
+        <MappingFragment StoreEntitySet="ActionType">
+          <ScalarProperty Name="IdActionType" ColumnName="IdActionType" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="TaxInspectionModel.Admins">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="IdAdmin" ColumnName="IdAdmin" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Arrears">
+      <EntityTypeMapping TypeName="TaxInspectionModel.Arrears">
+        <MappingFragment StoreEntitySet="Arrears">
+          <ScalarProperty Name="IdArrears" ColumnName="IdArrears" />
+          <ScalarProperty Name="IdTax" ColumnName="IdTax" />
+          <ScalarProperty Name="IdTaxpayer" ColumnName="IdTaxpayer" />
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Citizenship">
+      <EntityTypeMapping TypeName="TaxInspectionModel.Citizenship">
+        <MappingFragment StoreEntitySet="Citizenship">
+          <ScalarProperty Name="ShortContryName" ColumnName="ShortContryName" />
+          <ScalarProperty Name="ContryName" ColumnName="ContryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CitizenshipTaxpayer">
+      <EntityTypeMapping TypeName="TaxInspectionModel.CitizenshipTaxpayer">
+        <MappingFragment StoreEntitySet="CitizenshipTaxpayer">
+          <ScalarProperty Name="IdTaxpayer" ColumnName="IdTaxpayer" />
+          <ScalarProperty Name="ShortContryName" ColumnName="ShortContryName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="TaxInspectionModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="TaxInspectionModel.Logs">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="IdLogin" ColumnName="IdLogin" />
+          <ScalarProperty Name="IdUserType" ColumnName="IdUserType" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment">
+      <EntityTypeMapping TypeName="TaxInspectionModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
+          <ScalarProperty Name="IdTaxpayer" ColumnName="IdTaxpayer" />
+          <ScalarProperty Name="IdArrears" ColumnName="IdArrears" />
+          <ScalarProperty Name="IdTax" ColumnName="IdTax" />
+          <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
+          <ScalarProperty Name="TypeOfPayment" ColumnName="TypeOfPayment" />
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+          <ScalarProperty Name="DateOfPayment" ColumnName="DateOfPayment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Property">
+      <EntityTypeMapping TypeName="TaxInspectionModel.Property">
+        <MappingFragment StoreEntitySet="Property">
+          <ScalarProperty Name="IdProperty" ColumnName="IdProperty" />
+          <ScalarProperty Name="IdTaxpayer" ColumnName="IdTaxpayer" />
+          <ScalarProperty Name="IdTypeOfProperty" ColumnName="IdTypeOfProperty" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DateOfPurchase" ColumnName="DateOfPurchase" />
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TaxInspectionModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tax">
+      <EntityTypeMapping TypeName="TaxInspectionModel.Tax">
+        <MappingFragment StoreEntitySet="Tax">
+          <ScalarProperty Name="IdTax" ColumnName="IdTax" />
+          <ScalarProperty Name="IdTaxpayer" ColumnName="IdTaxpayer" />
+          <ScalarProperty Name="IdTaxRate" ColumnName="IdTaxRate" />
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+          <ScalarProperty Name="PaymentDeadline" ColumnName="PaymentDeadline" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taxpayer">
+      <EntityTypeMapping TypeName="TaxInspectionModel.Taxpayer">
+        <MappingFragment StoreEntitySet="Taxpayer">
+          <ScalarProperty Name="IdTaxpayer" ColumnName="IdTaxpayer" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="INN" ColumnName="INN" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="PassportSeries" ColumnName="PassportSeries" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaxRate">
+      <EntityTypeMapping TypeName="TaxInspectionModel.TaxRate">
+        <MappingFragment StoreEntitySet="TaxRate">
+          <ScalarProperty Name="IdTaxRate" ColumnName="IdTaxRate" />
+          <ScalarProperty Name="PercentRate" ColumnName="PercentRate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeOfProperty">
+      <EntityTypeMapping TypeName="TaxInspectionModel.TypeOfProperty">
+        <MappingFragment StoreEntitySet="TypeOfProperty">
+          <ScalarProperty Name="IdTypeOfProperty" ColumnName="IdTypeOfProperty" />
+          <ScalarProperty Name="Ttile" ColumnName="Ttile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UpdateTax">
+      <EntityTypeMapping TypeName="TaxInspectionModel.UpdateTax">
+        <MappingFragment StoreEntitySet="UpdateTax">
+          <ScalarProperty Name="IdUpdateTax" ColumnName="IdUpdateTax" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="NextUpdateDate" ColumnName="NextUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserType">
+      <EntityTypeMapping TypeName="TaxInspectionModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="IdUserType" ColumnName="IdUserType" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkingTable">
+      <EntityTypeMapping TypeName="TaxInspectionModel.WorkingTable">
+        <MappingFragment StoreEntitySet="WorkingTable">
+          <ScalarProperty Name="IdWorkingTable" ColumnName="IdWorkingTable" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

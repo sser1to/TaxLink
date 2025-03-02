@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище TaxInspectionModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Action">
+    <Key>
+      <PropertyRef Name="IdAction" />
+    </Key>
+    <Property Name="IdAction" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActionDate" Type="datetime" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdActionType" Type="int" Nullable="false" />
+    <Property Name="IdWorkingTable" Type="int" Nullable="false" />
+    <Property Name="IdAffectedElement" Type="int" />
+  </EntityType>
+  <EntityType Name="ActionType">
+    <Key>
+      <PropertyRef Name="IdActionType" />
+    </Key>
+    <Property Name="IdActionType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="IdAdmin" />
+    </Key>
+    <Property Name="IdAdmin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Arrears">
+    <Key>
+      <PropertyRef Name="IdArrears" />
+    </Key>
+    <Property Name="IdArrears" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTax" Type="int" Nullable="false" />
+    <Property Name="IdTaxpayer" Type="int" Nullable="false" />
+    <Property Name="Sum" Type="money" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="FinishDate" Type="date" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Citizenship">
+    <Key>
+      <PropertyRef Name="ShortContryName" />
+    </Key>
+    <Property Name="ShortContryName" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="ContryName" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CitizenshipTaxpayer">
+    <Key>
+      <PropertyRef Name="IdTaxpayer" />
+      <PropertyRef Name="ShortContryName" />
+    </Key>
+    <Property Name="IdTaxpayer" Type="int" Nullable="false" />
+    <Property Name="ShortContryName" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="IdEmployee" />
+    </Key>
+    <Property Name="IdEmployee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Patronymic" Type="nvarchar" MaxLength="30" />
+    <Property Name="Gender" Type="bit" Nullable="false" />
+    <Property Name="Phone" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="IdLogin" />
+    </Key>
+    <Property Name="IdLogin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUserType" Type="int" Nullable="false" />
+    <Property Name="LoginDate" Type="datetime" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="IdPayment" />
+    </Key>
+    <Property Name="IdPayment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTaxpayer" Type="int" Nullable="false" />
+    <Property Name="IdArrears" Type="int" />
+    <Property Name="IdTax" Type="int" />
+    <Property Name="IdEmployee" Type="int" Nullable="false" />
+    <Property Name="TypeOfPayment" Type="bit" Nullable="false" />
+    <Property Name="Sum" Type="money" Nullable="false" />
+    <Property Name="DateOfPayment" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Property">
+    <Key>
+      <PropertyRef Name="IdProperty" />
+    </Key>
+    <Property Name="IdProperty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTaxpayer" Type="int" Nullable="false" />
+    <Property Name="IdTypeOfProperty" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DateOfPurchase" Type="date" Nullable="false" />
+    <Property Name="Sum" Type="money" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tax">
+    <Key>
+      <PropertyRef Name="IdTax" />
+    </Key>
+    <Property Name="IdTax" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTaxpayer" Type="int" Nullable="false" />
+    <Property Name="IdTaxRate" Type="int" Nullable="false" />
+    <Property Name="Sum" Type="money" Nullable="false" />
+    <Property Name="PaymentDeadline" Type="date" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Taxpayer">
+    <Key>
+      <PropertyRef Name="IdTaxpayer" />
+    </Key>
+    <Property Name="IdTaxpayer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Patronymic" Type="nvarchar" MaxLength="30" />
+    <Property Name="INN" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Gender" Type="bit" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="BirthPlace" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PassportSeries" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="PassportNumber" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaxRate">
+    <Key>
+      <PropertyRef Name="IdTaxRate" />
+    </Key>
+    <Property Name="IdTaxRate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PercentRate" Type="float" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="FinishDate" Type="date" />
+  </EntityType>
+  <EntityType Name="TypeOfProperty">
+    <Key>
+      <PropertyRef Name="IdTypeOfProperty" />
+    </Key>
+    <Property Name="IdTypeOfProperty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ttile" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UpdateTax">
+    <Key>
+      <PropertyRef Name="IdUpdateTax" />
+    </Key>
+    <Property Name="IdUpdateTax" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UpdateDate" Type="date" Nullable="false" />
+    <Property Name="NextUpdateDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="IdUserType" />
+    </Key>
+    <Property Name="IdUserType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkingTable">
+    <Key>
+      <PropertyRef Name="IdWorkingTable" />
+    </Key>
+    <Property Name="IdWorkingTable" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Action_ActionType">
+    <End Role="ActionType" Type="Self.ActionType" Multiplicity="1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionType">
+        <PropertyRef Name="IdActionType" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="IdActionType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_WorkingTable">
+    <End Role="WorkingTable" Type="Self.WorkingTable" Multiplicity="1" />
+    <End Role="Action" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingTable">
+        <PropertyRef Name="IdWorkingTable" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="IdWorkingTable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Arrears_Tax">
+    <End Role="Tax" Type="Self.Tax" Multiplicity="1" />
+    <End Role="Arrears" Type="Self.Arrears" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tax">
+        <PropertyRef Name="IdTax" />
+      </Principal>
+      <Dependent Role="Arrears">
+        <PropertyRef Name="IdTax" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CitizenshipTaxpayer_Citizenship">
+    <End Role="Citizenship" Type="Self.Citizenship" Multiplicity="1" />
+    <End Role="CitizenshipTaxpayer" Type="Self.CitizenshipTaxpayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizenship">
+        <PropertyRef Name="ShortContryName" />
+      </Principal>
+      <Dependent Role="CitizenshipTaxpayer">
+        <PropertyRef Name="ShortContryName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CitizenshipTaxpayer_Taxpayer">
+    <End Role="Taxpayer" Type="Self.Taxpayer" Multiplicity="1" />
+    <End Role="CitizenshipTaxpayer" Type="Self.CitizenshipTaxpayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Taxpayer">
+        <PropertyRef Name="IdTaxpayer" />
+      </Principal>
+      <Dependent Role="CitizenshipTaxpayer">
+        <PropertyRef Name="IdTaxpayer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Logs_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+    <End Role="Logs" Type="Self.Logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="IdUserType" />
+      </Principal>
+      <Dependent Role="Logs">
+        <PropertyRef Name="IdUserType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Arrears">
+    <End Role="Arrears" Type="Self.Arrears" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Arrears">
+        <PropertyRef Name="IdArrears" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="IdArrears" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="IdEmployee" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="IdEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Tax">
+    <End Role="Tax" Type="Self.Tax" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tax">
+        <PropertyRef Name="IdTax" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="IdTax" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_Taxpayer">
+    <End Role="Taxpayer" Type="Self.Taxpayer" Multiplicity="1" />
+    <End Role="Property" Type="Self.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Taxpayer">
+        <PropertyRef Name="IdTaxpayer" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="IdTaxpayer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Property_TypeOfProperty">
+    <End Role="TypeOfProperty" Type="Self.TypeOfProperty" Multiplicity="1" />
+    <End Role="Property" Type="Self.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeOfProperty">
+        <PropertyRef Name="IdTypeOfProperty" />
+      </Principal>
+      <Dependent Role="Property">
+        <PropertyRef Name="IdTypeOfProperty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tax_Taxpayer">
+    <End Role="Taxpayer" Type="Self.Taxpayer" Multiplicity="1" />
+    <End Role="Tax" Type="Self.Tax" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Taxpayer">
+        <PropertyRef Name="IdTaxpayer" />
+      </Principal>
+      <Dependent Role="Tax">
+        <PropertyRef Name="IdTaxpayer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tax_TaxRate">
+    <End Role="TaxRate" Type="Self.TaxRate" Multiplicity="1" />
+    <End Role="Tax" Type="Self.Tax" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaxRate">
+        <PropertyRef Name="IdTaxRate" />
+      </Principal>
+      <Dependent Role="Tax">
+        <PropertyRef Name="IdTaxRate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище TaxInspectionModelContainer">
+    <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActionType" EntityType="Self.ActionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Arrears" EntityType="Self.Arrears" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Citizenship" EntityType="Self.Citizenship" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CitizenshipTaxpayer" EntityType="Self.CitizenshipTaxpayer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Property" EntityType="Self.Property" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tax" EntityType="Self.Tax" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Taxpayer" EntityType="Self.Taxpayer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaxRate" EntityType="Self.TaxRate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeOfProperty" EntityType="Self.TypeOfProperty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UpdateTax" EntityType="Self.UpdateTax" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkingTable" EntityType="Self.WorkingTable" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Action_ActionType" Association="Self.FK_Action_ActionType">
+      <End Role="ActionType" EntitySet="ActionType" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_WorkingTable" Association="Self.FK_Action_WorkingTable">
+      <End Role="WorkingTable" EntitySet="WorkingTable" />
+      <End Role="Action" EntitySet="Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Arrears_Tax" Association="Self.FK_Arrears_Tax">
+      <End Role="Tax" EntitySet="Tax" />
+      <End Role="Arrears" EntitySet="Arrears" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CitizenshipTaxpayer_Citizenship" Association="Self.FK_CitizenshipTaxpayer_Citizenship">
+      <End Role="Citizenship" EntitySet="Citizenship" />
+      <End Role="CitizenshipTaxpayer" EntitySet="CitizenshipTaxpayer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CitizenshipTaxpayer_Taxpayer" Association="Self.FK_CitizenshipTaxpayer_Taxpayer">
+      <End Role="Taxpayer" EntitySet="Taxpayer" />
+      <End Role="CitizenshipTaxpayer" EntitySet="CitizenshipTaxpayer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Logs_UserType" Association="Self.FK_Logs_UserType">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="Logs" EntitySet="Logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Arrears" Association="Self.FK_Payment_Arrears">
+      <End Role="Arrears" EntitySet="Arrears" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Employee" Association="Self.FK_Payment_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Tax" Association="Self.FK_Payment_Tax">
+      <End Role="Tax" EntitySet="Tax" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_Taxpayer" Association="Self.FK_Property_Taxpayer">
+      <End Role="Taxpayer" EntitySet="Taxpayer" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Property_TypeOfProperty" Association="Self.FK_Property_TypeOfProperty">
+      <End Role="TypeOfProperty" EntitySet="TypeOfProperty" />
+      <End Role="Property" EntitySet="Property" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tax_Taxpayer" Association="Self.FK_Tax_Taxpayer">
+      <End Role="Taxpayer" EntitySet="Taxpayer" />
+      <End Role="Tax" EntitySet="Tax" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tax_TaxRate" Association="Self.FK_Tax_TaxRate">
+      <End Role="TaxRate" EntitySet="TaxRate" />
+      <End Role="Tax" EntitySet="Tax" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

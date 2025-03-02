@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE73353A-44A9-4449-BC99-DB3C1CC2079D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TaxLink</RootNamespace>
+    <AssemblyName>TaxLink</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
+      <HintPath>packages\MahApps.Metro.2.0.0\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=3.0.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignColors.3.0.0\lib\net462\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.MahApps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignThemes.MahApps.1.0.0\lib\net462\MaterialDesignThemes.MahApps.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=5.0.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignThemes.5.0.0\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.Json.8.0.0\lib\net462\System.Net.Http.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.8.0.0\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Action.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActionType.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admins.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Arrears.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Citizenship.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CitizenshipTaxpayer.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClarkHistory.cs" />
+    <Compile Include="CurrentSettings.cs" />
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="Employee.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logs.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelClient.cs" />
+    <Compile Include="NotificationHistory.cs" />
+    <Compile Include="Pages\AdminArrearsPage.xaml.cs">
+      <DependentUpon>AdminArrearsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminEmployeePage.xaml.cs">
+      <DependentUpon>AdminEmployeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminPaymentsPage.xaml.cs">
+      <DependentUpon>AdminPaymentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminPropertyPage.xaml.cs">
+      <DependentUpon>AdminPropertyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminTaxPage.xaml.cs">
+      <DependentUpon>AdminTaxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminTaxpayersPage.xaml.cs">
+      <DependentUpon>AdminTaxpayersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminTaxRatePage.xaml.cs">
+      <DependentUpon>AdminTaxRatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClarkPage.xaml.cs">
+      <DependentUpon>ClarkPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EmployeeArrearsPage.xaml.cs">
+      <DependentUpon>EmployeeArrearsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EmployeePaymentsPage.xaml.cs">
+      <DependentUpon>EmployeePaymentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EmployeePropertyPage.xaml.cs">
+      <DependentUpon>EmployeePropertyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EmployeeTaxPage.xaml.cs">
+      <DependentUpon>EmployeeTaxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EmployeeTaxpayersPage.xaml.cs">
+      <DependentUpon>EmployeeTaxpayersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForAdminArrearsPage.xaml.cs">
+      <DependentUpon>FilterForAdminArrearsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForAdminEmployeePage.xaml.cs">
+      <DependentUpon>FilterForAdminEmployeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForAdminPaymentsPage.xaml.cs">
+      <DependentUpon>FilterForAdminPaymentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForAdminPropertyPage.xaml.cs">
+      <DependentUpon>FilterForAdminPropertyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForAdminTaxPage.xaml.cs">
+      <DependentUpon>FilterForAdminTaxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForAdminTaxpayersPage.xaml.cs">
+      <DependentUpon>FilterForAdminTaxpayersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForAdminTaxRatePage.xaml.cs">
+      <DependentUpon>FilterForAdminTaxRatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForEmployeeArrearsPage.xaml.cs">
+      <DependentUpon>FilterForEmployeeArrearsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForEmployeePaymentsPage.xaml.cs">
+      <DependentUpon>FilterForEmployeePaymentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForEmployeePropertyPage.xaml.cs">
+      <DependentUpon>FilterForEmployeePropertyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForEmployeeTaxPage.xaml.cs">
+      <DependentUpon>FilterForEmployeeTaxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForEmployeeTaxpayersPage.xaml.cs">
+      <DependentUpon>FilterForEmployeeTaxpayersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForHistoryPage.xaml.cs">
+      <DependentUpon>FilterForHistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForLogsPage.xaml.cs">
+      <DependentUpon>FilterForLogsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForTaxpayerArrearsPage.xaml.cs">
+      <DependentUpon>FilterForTaxpayerArrearsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Filters\FilterForTaxpayerPaymentsPage.xaml.cs">
+      <DependentUpon>FilterForTaxpayerPaymentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InfographicsPage.xaml.cs">
+      <DependentUpon>InfographicsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LogsPage.xaml.cs">
+      <DependentUpon>LogsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainAdminPage.xaml.cs">
+      <DependentUpon>MainAdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainEmployeePage.xaml.cs">
+      <DependentUpon>MainEmployeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainTaxpayerPage.xaml.cs">
+      <DependentUpon>MainTaxpayerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NotificationHistoryPage.xaml.cs">
+      <DependentUpon>NotificationHistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NotificationPage.xaml.cs">
+      <DependentUpon>NotificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TaxpayerArrearsPage.xaml.cs">
+      <DependentUpon>TaxpayerArrearsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TaxpayerPaymentsPage.xaml.cs">
+      <DependentUpon>TaxpayerPaymentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Property.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tax.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaxLinkModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TaxLinkModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaxLinkModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaxLinkModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TaxLinkModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Taxpayer.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaxRate.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypeOfProperty.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTax.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserType.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddEmployee.xaml.cs">
+      <DependentUpon>AddEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddProperty.xaml.cs">
+      <DependentUpon>AddProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddTaxpayer.xaml.cs">
+      <DependentUpon>AddTaxpayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddTaxRate.xaml.cs">
+      <DependentUpon>AddTaxRate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\AuthorizationWindow.xaml.cs">
+      <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ClarkHistoryWindow.xaml.cs">
+      <DependentUpon>ClarkHistoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditEmployee.xaml.cs">
+      <DependentUpon>EditEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditProperty.xaml.cs">
+      <DependentUpon>EditProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditTaxpayer.xaml.cs">
+      <DependentUpon>EditTaxpayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditTaxRate.xaml.cs">
+      <DependentUpon>EditTaxRate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EmployeeWindow.xaml.cs">
+      <DependentUpon>EmployeeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\InfoWindow.xaml.cs">
+      <DependentUpon>InfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ListOfCountries.xaml.cs">
+      <DependentUpon>ListOfCountries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PropertyImageWindow.xaml.cs">
+      <DependentUpon>PropertyImageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TaxpayerWindow.xaml.cs">
+      <DependentUpon>TaxpayerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkingTable.cs">
+      <DependentUpon>TaxLinkModel.tt</DependentUpon>
+    </Compile>
+    <Page Include="Pages\AdminArrearsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminEmployeePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminPaymentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminPropertyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminTaxPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminTaxpayersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminTaxRatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ClarkPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EmployeeArrearsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EmployeePaymentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EmployeePropertyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EmployeeTaxPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EmployeeTaxpayersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForAdminArrearsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForAdminEmployeePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForAdminPaymentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForAdminPropertyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForAdminTaxPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForAdminTaxpayersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForAdminTaxRatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForEmployeeArrearsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForEmployeePaymentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForEmployeePropertyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForEmployeeTaxPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForEmployeeTaxpayersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForHistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForLogsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForTaxpayerArrearsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Filters\FilterForTaxpayerPaymentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\InfographicsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LogsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainAdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainEmployeePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainTaxpayerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NotificationHistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NotificationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TaxpayerArrearsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TaxpayerPaymentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddTaxpayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddTaxRate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AuthorizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ClarkHistoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditTaxpayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditTaxRate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\InfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ListOfCountries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PropertyImageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TaxpayerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Docs\ArrearsNotificationTemplate.docx" />
+    <None Include="Docs\TaxNotificationTemplate.docx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="TaxLinkModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TaxLinkModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TaxLinkModel.edmx.diagram">
+      <DependentUpon>TaxLinkModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bell.png" />
+    <Resource Include="Images\book.png" />
+    <Resource Include="Images\chart.png" />
+    <Resource Include="Images\clark.png" />
+    <Resource Include="Images\close.png" />
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\exit.png" />
+    <Resource Include="Images\history.png" />
+    <Resource Include="Images\info.png" />
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\random.png" />
+    <Resource Include="Images\up arrow.png" />
+    <Resource Include="Images\user.png" />
+    <Content Include="TaxLinkModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TaxLinkModel.edmx</DependentUpon>
+      <LastGenOutput>TaxLinkModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TaxLinkModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TaxLinkModel.edmx</DependentUpon>
+      <LastGenOutput>TaxLinkModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>
